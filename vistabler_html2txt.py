@@ -112,7 +112,7 @@ try:
 # error handling and next-session text output
     for i in range(w1):
         next_session_text = "\nNext session is {} at {} in {}\n\n"
-        weekend_text = "\nHave a good weekend\n\n"
+        weekend_text = "\nHave a good weekend!\n\n"
 
         if current_time < stime[i + w2]:
             output_file.write(next_session_text.format(
