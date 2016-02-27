@@ -48,7 +48,7 @@ def sesh_date_time():
     w = lines.index(year)
     date.append(lines[(w - 5):(w + 5)])
     stime.append(lines[(w + 6):(w + 11)])
-    w = lines.index(year, (w + 40))
+    w = lines.index(year, (w + 11))
     etime.append(lines[(w + 6):(w + 11)])
 
 
@@ -56,10 +56,12 @@ def next_loc():
     """look for next sesh location"""
     global lines
 
-    lines = lines.partition("  <td>\\n', '")
-    lines = lines[2]
-    w = lines.find("    ")
-    loc.append(lines[:w])
+    w = lines.index(year)
+    w1 = lines.index("<", w+45)
+    w2 = lines[(w + 45):(w1)]
+    loc.append(w2)
+    lines = lines.partition(w2)
+    lines = lines[1] + lines[2]
 
 
 def next_sesh():
@@ -98,11 +100,16 @@ while nh < 100:
 # file creation
 output_file = open(output_path + output_filename, 'w')
 
+output_file.write("Current Time: " + current_time +
+                  "\nCurrent Date:  " + current_date + "\n")
+
 # next session
 w1 = 0
+w3 = len(date)
+
+# test for weekday
 try:
-    w2 = date.index(current_date)
-    w3 = len(date)
+    w2 = date.index(current_date)  # yes is weekday
     for i in range(w2, len(date)):
         if current_date == date[i]:
             w1 = w1 + 1
@@ -130,8 +137,8 @@ try:
                     break
                 pass
 
-except ValueError:
-    pass
+except ValueError:  # no is weekend
+    output_file.write("\nEnjoy your weekend\n\n")
 
 # date header
 for i in range(len(sesh)):
