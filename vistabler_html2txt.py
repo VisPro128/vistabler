@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Feb 25 10:44:30 2016
-
-@author: Patrik Toobe
+author: Patrik Toobe
 """
 
 import time
@@ -116,7 +115,7 @@ try:
         else:
             pass
 
-# error handling and next-session text output
+# handling for next-session text output
     for i in range(w1):
         next_session_text = "\nNext session is {} at {} in {}\n\n"
         weekend_text = "\nHave a good weekend!\n\n"
@@ -137,7 +136,7 @@ try:
                     break
                 pass
 
-except ValueError:  # no is weekend
+except ValueError:  # no, is weekend
     output_file.write("\nEnjoy your weekend\n\n")
 
 # date header
