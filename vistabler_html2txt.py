@@ -162,18 +162,3 @@ for i in range(len(sesh)):
 
 output_file.close()
 
-
-"""
-if int(stime[date.index(current_date)][:2]) > int(current_time[:2]):
-    print "next session is {} at {} in {}".format(sesh[0], stime[0], loc[0])
-try:
-    s = 17
-    print "\n s = {}".format(s)
-    print sesh[s]
-    print date[s]
-    print stime[s]
-    print etime[s]
-    print loc[s]
-except IndexError:
-    print "\nNo session when s = {}\n".format(s)
-"""
