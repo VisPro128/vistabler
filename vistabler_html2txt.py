@@ -137,7 +137,7 @@ try:
                 pass
 
 except ValueError:  # no, is weekend
-    output_file.write("\nEnjoy your weekend\n\n")
+    output_file.write("\nEnjoy your weekend.\nHave you downloaded the new timetable?\n\n")
 
 # date header
 for i in range(len(sesh)):
