@@ -10,9 +10,11 @@ import time
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
 input_file = "/sdcard/Vistabler/mytimetable.html"
+# input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
 
 # the path you want your file to export to
 output_path = "/sdcard/Vistabler/"
+# output_path = "/Users/JT/Desktop/"
 
 # the filename and extension you want to export with
 output_filename = "myTimetable.txt"
@@ -41,27 +43,48 @@ loc = []
 lines = lines.partition(courses[0])
 sesh.append(lines[1])
 lines = lines[1] + lines[2]
+rf = 0
 
 
-def sesh_date_time():
+def sesh_date_time(rf):
     """look for sesh date and times"""
-    w = lines.index(year)
-    date.append(lines[(w - 5):(w + 5)])
-    stime.append(lines[(w + 6):(w + 11)])
-    w = lines.index(year, (w + 11))
-    etime.append(lines[(w + 6):(w + 11)])
+    if rf == 0:
+        w = lines.index(year)
+        date.append(lines[(w - 5):(w + 5)])
+        stime.append(lines[(w + 6):(w + 11)])
+        w = lines.index(year, (w + 11))
+        etime.append(lines[(w + 6):(w + 11)])
+
+    elif rf == 1:
+        w = lines.index(year)
+        date.append(lines[(w - 5):(w + 5)])
+        stime.append(lines[(w + 6):(w + 11)])
+        w = lines.index(year, (w + 40))
+        etime.append(lines[(w + 6):(w + 11)])
 
 
-def next_loc():
+def next_loc(rf):
     """look for next sesh location"""
     global lines
 
-    w = lines.index(year)
-    w1 = lines.index("<", w+45)
-    w2 = lines[(w + 45):(w1)]
-    loc.append(w2)
-    lines = lines.partition(w2)
-    lines = lines[1] + lines[2]
+    if rf == 0:
+        w = lines.index(year)
+        w1 = lines.index("<", w+45)
+        w2 = lines[(w + 45):(w1)]
+        loc.append(w2)
+        if loc[0].isspace():
+            rf = 1
+            rf_change()
+            return 'rf1'
+
+        lines = lines.partition(w2)
+        lines = lines[1] + lines[2]
+
+    elif rf == 1:
+        lines = lines.partition("  <td>\\n', '")
+        lines = lines[2]
+        w = lines.find("    ")
+        loc.append(lines[:w])
 
 
 def next_sesh():
@@ -85,15 +108,27 @@ def next_sesh():
     sesh.append(lines[1])
     lines = lines[1] + lines[2]
 
-sesh_date_time()
-next_loc()
+
+def rf_change():
+    global date, stime, etime, loc
+    date = []
+    stime = []
+    etime = []
+    loc = []
+    sesh_date_time(1)
+    next_loc(1)
+    return
+
+sesh_date_time(rf)
+if next_loc(rf) == 'rf1':
+    rf = 1
 
 nh = 0
 while nh < 100:
     if next_sesh() == 1:
         break
-    sesh_date_time()
-    next_loc()
+    sesh_date_time(rf)
+    next_loc(rf)
     nh = nh + 1
 
 
@@ -161,19 +196,3 @@ for i in range(len(sesh)):
         pass
 
 output_file.close()
-
-
-"""
-if int(stime[date.index(current_date)][:2]) > int(current_time[:2]):
-    print "next session is {} at {} in {}".format(sesh[0], stime[0], loc[0])
-try:
-    s = 17
-    print "\n s = {}".format(s)
-    print sesh[s]
-    print date[s]
-    print stime[s]
-    print etime[s]
-    print loc[s]
-except IndexError:
-    print "\nNo session when s = {}\n".format(s)
-"""
