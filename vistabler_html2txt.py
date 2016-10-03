@@ -23,7 +23,7 @@ current_time = time.strftime("%H:%M")
 courses = ["MATH1054", "SESA1015", "FEEG1001", "FEEG1002",
            "FEEG1003", "FEEG1004"]
 
-# import offline timetable
+# import offline timetable 
 timetable = open(input_file, 'r')
 global lines
 lines = timetable.readlines()
