@@ -23,8 +23,8 @@ output_filename = "myTimetable.txt"
 year = time.strftime("/%Y")
 current_date = time.strftime("%d/%m/%Y")
 current_time = time.strftime("%H:%M")
-courses = ["MATH1054", "SESA1015", "FEEG1001", "FEEG1002",
-           "FEEG1003", "FEEG1004"]
+courses = ["SESA2022", "SESA2024", "FEEG2006", "FEEG2005",
+           "MATH2048", "SESA2025", "SESA2023", "FEEG2001"]
 
 # import offline timetable
 timetable = open(input_file, 'r')
