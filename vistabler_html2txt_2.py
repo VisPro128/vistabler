@@ -133,7 +133,7 @@ while nh < 100:
 
 
 # file creation
-output_file = open(output_path + output_filename, 'w')
+output_file = open(output_path + output_filename, 'w+')
 
 output_file.write("Current Time: " + current_time +
                   "\nCurrent Date:  " + current_date + "\n")
