@@ -4,9 +4,7 @@ Created on Thu Feb 25 10:44:30 2016
 
 @author: Patrik Toobe
 """
-
 import time
-
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
 input_file = "/sdcard/Vistabler/mytimetable.html"
@@ -54,7 +52,6 @@ def sesh_date_time(rf):
         stime.append(lines[(w + 6):(w + 11)])
         w = lines.index(year, (w + 11))
         etime.append(lines[(w + 6):(w + 11)])
-
     elif rf == 1:
         w = lines.index(year)
         date.append(lines[(w - 5):(w + 5)])
@@ -66,7 +63,6 @@ def sesh_date_time(rf):
 def next_loc(rf):
     """look for next sesh location"""
     global lines
-
     if rf == 0:
         w = lines.index(year)
         w1 = lines.index("<", w+45)
@@ -76,10 +72,8 @@ def next_loc(rf):
             rf = 1
             rf_change()
             return 'rf1'
-
         lines = lines.partition(w2)
         lines = lines[1] + lines[2]
-
     elif rf == 1:
         lines = lines.partition("  <td>\\n', '")
         lines = lines[2]
