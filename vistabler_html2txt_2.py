@@ -8,11 +8,11 @@ import time
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
 input_file = "/sdcard/Vistabler/mytimetable.html"
-# input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
+#  input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
 
 # the path you want your file to export to
 output_path = "/sdcard/Vistabler/"
-# output_path = "/Users/JT/Desktop/"
+#  output_path = "/Users/JT/Desktop/"
 
 # the filename and extension you want to export with
 output_filename = "myTimetable.txt"
@@ -43,6 +43,8 @@ sesh.append(lines[1])
 lines = lines[1] + lines[2]
 rf = 0
 
+# define some functions
+
 
 def sesh_date_time(rf):
     """look for sesh date and times"""
@@ -55,9 +57,9 @@ def sesh_date_time(rf):
     elif rf == 1:
         w = lines.index(year)
         date.append(lines[(w - 5):(w + 5)])
-        stime.append(lines[(w + 6):(w + 11)])
+        stime.append(lines[(w + 5):(w + 11)])
         w = lines.index(year, (w + 40))
-        etime.append(lines[(w + 6):(w + 11)])
+        etime.append(lines[(w + 5):(w + 11)])
 
 
 def next_loc(rf):
@@ -92,6 +94,8 @@ def next_sesh():
     for i in range(len(search)):
         if search[i] < 0:
             search[i] = 100000
+        if search[i] > 3000:
+            search[i] = 100000
 
     if (sum(search)/len(search)) == 100000:
         return 1
@@ -113,6 +117,7 @@ def rf_change():
     next_loc(1)
     return
 
+# more running code
 sesh_date_time(rf)
 if next_loc(rf) == 'rf1':
     rf = 1
