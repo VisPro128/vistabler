@@ -5,7 +5,7 @@ vistabler_html2txt_2.py
 ^this code interprets the manually downloaded timetable html file for the current week and exports a txt with formatted timetable information.
 
 My.Timetable.html
-^is the file from which the timetable information wants to be read. Needs to be manually updated every week.
+^is the file from which the timetable information wants to be read. Needs to be manually updated every week. 
 
 # Using this for yourself
 Make a fork for yourself.
@@ -38,3 +38,7 @@ There are some things to change too.
 -Path Variables: Output path/input file may be an issue on some devices as it specifies 'sdcard' in the path. If this doesn't work, use a folder or address that does.
 
 -Courses: You need to put your courses in manually sadly.
+
+
+
+To download your timetable, go to https://timetable.soton.ac.uk/ and log in, then save the page and upload the html file only to the main folder of your fork.
