@@ -12,12 +12,10 @@ Make a fork for yourself.
 The Tasker task will make a folder called Vistabler in your SD card/main directory.
 
 You'll need:
+
 -Tasker
-
 -Read_Timetable_ino.tsk.xml Tasker file
-
 -SL4A (found in the associated files folder)
-
 -PythonForAndroid ("")
 
 
