@@ -26,9 +26,13 @@ Install SL4A, PythonForAndroid, Tasker and then the tast in that order.
 There are some things to change too.
 
 *Tasker edits*
+
 -Action 9, HTTP Get: The path needs to be changed from master to whatever the name of your fork is, so you get your timetable instead of mine.
+
 -Action 11, HTTP Get: Same deal as above.
 
 *Code edits*
+
 -Path Variables: Output path/input file may be an issue on some devices as it specifies 'sdcard' in the path. If this doesn't work, use a folder or address that does.
+
 -Courses: You need to put your courses in manually sadly.
