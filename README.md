@@ -15,7 +15,7 @@ You'll need:
 
 -Tasker
 
--Read_Timetable_ino.tsk.xml Tasker file
+-Read_Timetable_info.tsk.xml Tasker file
 
 -SL4A (found in the associated files folder)
 
@@ -25,11 +25,13 @@ Install SL4A, PythonForAndroid, Tasker and then the tast in that order.
 
 There are some things to change too.
 
+
 *Tasker edits*
 
 -Action 9, HTTP Get: The path needs to be changed from master to whatever the name of your fork is, so you get your timetable instead of mine.
 
 -Action 11, HTTP Get: Same deal as above.
+
 
 *Code edits*
 
