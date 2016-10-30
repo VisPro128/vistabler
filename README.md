@@ -4,5 +4,5 @@ This repo contains associated files for the Vistabler project, which attempts to
 vistabler_html2txt_2.py
 ^this code interprets the manually downloaded timetable html file for the current week and exports a txt with formatted timetable information.
 
-mytimetable.html
-^is the file from which the timetable information wants to be read.
+My.Timetable.html
+^is the file from which the timetable information wants to be read. Needs to be manually updated every week.
