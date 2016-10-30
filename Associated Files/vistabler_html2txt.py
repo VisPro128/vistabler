@@ -9,7 +9,7 @@ import time
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
 input_file = "/sdcard/Vistabler/mytimetable.html"
-
+ 
 # the path you want your file to export to
 output_path = "/sdcard/Vistabler/"
 
