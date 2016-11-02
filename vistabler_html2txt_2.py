@@ -20,7 +20,7 @@ output_filename = "myTimetable.txt"
 
 year = time.strftime("/%Y")
 current_date = time.strftime("%d/%m/%Y")
-current_time = time.strftime("%H:%M")
+current_time = "12:05"  # time.strftime("%H:%M")
 courses = ["SESA2022", "SESA2024", "FEEG2006", "FEEG2005",
            "MATH2048", "SESA2025", "SESA2023", "FEEG2001"]
 
@@ -153,12 +153,16 @@ try:
 # error handling and next-session text output
     for i in range(w1):
         next_session_text = "\nNext session is {} at {} in {}\n\n"
+        current_session_text = "\nCurrent session is {} at {} in {}\n\n"
         weekend_text = "\nHave a good weekend!\n\n"
 
-        if current_time < stime[i + w2]:
-            output_file.write(next_session_text.format(
+        if (current_time[:3] + "05") >= current_time > stime[i + w2]:  # hh:05?
+            output_file.write(current_session_text.format(
                         sesh[i + w2], stime[i + w2], loc[i + w2]))
             break
+        elif current_time < stime[i + w2]:  # hh:00?
+            output_file.write(next_session_text.format(
+                        sesh[i + w2], stime[i + w2], loc[i + w2]))
         else:
             if w2 + i == w3 - 1:
                 output_file.write(weekend_text)
