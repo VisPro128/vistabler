@@ -8,11 +8,11 @@ import time
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
 input_file = "/sdcard/Vistabler/mytimetable.html"
-#  input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
+# input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
 
 # the path you want your file to export to
 output_path = "/sdcard/Vistabler/"
-#  output_path = "/Users/JT/Desktop/"
+# output_path = "/Users/JT/Desktop/"
 
 # the filename and extension you want to export with
 output_filename = "myTimetable.txt"
@@ -20,7 +20,7 @@ output_filename = "myTimetable.txt"
 
 year = time.strftime("/%Y")
 current_date = time.strftime("%d/%m/%Y")
-current_time = "12:05"  # time.strftime("%H:%M")
+current_time = time.strftime("%H:%M")
 courses = ["SESA2022", "SESA2024", "FEEG2006", "FEEG2005",
            "MATH2048", "SESA2025", "SESA2023", "FEEG2001"]
 
@@ -153,16 +153,18 @@ try:
 # error handling and next-session text output
     for i in range(w1):
         next_session_text = "\nNext session is {} at {} in {}\n\n"
+        tmrrw_session_text = "\nNext session is {} tomorrow at {} in {}\n\n"
         current_session_text = "\nCurrent session is {} at {} in {}\n\n"
         weekend_text = "\nHave a good weekend!\n\n"
 
-        if (current_time[:3] + "05") >= current_time > stime[i + w2]:  # hh:05?
+        if (current_time[:3] + "05") >= current_time > stime[i + w2]:  # b4 05?
             output_file.write(current_session_text.format(
                         sesh[i + w2], stime[i + w2], loc[i + w2]))
             break
-        elif current_time < stime[i + w2]:  # hh:00?
+        elif current_time < stime[i + w2]:  # b4 00?
             output_file.write(next_session_text.format(
                         sesh[i + w2], stime[i + w2], loc[i + w2]))
+            break
         else:
             if w2 + i == w3 - 1:
                 output_file.write(weekend_text)
@@ -170,6 +172,10 @@ try:
             else:
                 if i == w1 - 1:
                     i = i + 1
+                    if date[i + w2] > date[i + w2 - 1]:
+                        output_file.write(tmrrw_session_text.format(
+                            sesh[i + w2], stime[i + w2], loc[i + w2]))
+                        break
                     output_file.write(next_session_text.format(
                             sesh[i + w2], stime[i + w2], loc[i + w2]))
                     break
