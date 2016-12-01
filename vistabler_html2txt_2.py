@@ -7,12 +7,12 @@ Created on Thu Feb 25 10:44:30 2016
 import time
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
-input_file = "/sdcard/Vistabler/mytimetable.html"
-# input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
+#input_file = "/sdcard/Vistabler/mytimetable.html"
+input_file = "/Users/JT/Github/vistabler/My.Timetable.html"
 
 # the path you want your file to export to
-output_path = "/sdcard/Vistabler/"
-# output_path = "/Users/JT/Desktop/"
+#output_path = "/sdcard/Vistabler/"
+output_path = "/Users/JT/Desktop/"
 
 # the filename and extension you want to export with
 output_filename = "myTimetable.txt"
