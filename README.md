@@ -1,7 +1,7 @@
 # Vistabler
 This repo contains associated files for the Vistabler project, which attempts to pull timetable information from a University of Southampton timetable and display it on an Android device in some kind of useful way without having to use the mySouthampton app.
 
-vistabler_html2txt_2.py
+vistabler_html2txt_3.py
 ^this code interprets the manually downloaded timetable html file for the current week and exports a txt with formatted timetable information.
 
 My.Timetable.html
@@ -21,7 +21,7 @@ You'll need:
 
 -PythonForAndroid ("")
 
-Install SL4A, PythonForAndroid, Tasker and then the tast in that order.
+Install SL4A, PythonForAndroid, Tasker and then the task in that order.
 
 There are some things to change too.
 
