@@ -1,7 +1,7 @@
 # Vistabler
 This repo contains associated files for the Vistabler project, which attempts to pull timetable information from a University of Southampton timetable and display it on an Android device in some kind of useful way without having to use the mySouthampton app.
 
-vistabler_html2txt_3.py
+vistabler_html2txt_4.py
 ^this code interprets the manually downloaded timetable html file for the current week and exports a txt with formatted timetable information.
 
 My.Timetable.html
@@ -37,7 +37,7 @@ There are some things to change too.
 
 -Path Variables: Output path/input file may be an issue on some devices as it specifies 'sdcard' in the path. If this doesn't work, use a folder or address that does.
 
--Courses: You need to put your courses in manually sadly.
+-Courses: You no longer need to enter your courses manually.
 
 
 
