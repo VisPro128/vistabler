@@ -58,6 +58,8 @@ def comber_function():
             y = lines.index("\">", x)  # find type start
             y2 = lines.index(" ", y)  # find type end
             z = lines[y + 2:y2]
+            if z.__contains__("Lab"):  # make lab destinction
+                sesh[-1] = sesh[-1] + (" (L)")
             stype.append(z)  # add sesh type to list
 
             x = lines.index("<td>", y2)  # find sesh date
@@ -84,7 +86,7 @@ def comber_function():
             if len(z) == 0:
                 z = "(No location given)"
             if z.startswith("BOL"):
-                z = z[13:] + " (BLDW)"
+                z = z[13:]  # + " (BLDW)"
             loc.append(z)  # add loc to list
 
     except ValueError:
