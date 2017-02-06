@@ -3,6 +3,11 @@
 Created on Thu Feb 25 10:44:30 2016
 
 @author: Patrik Toobe
+
+Function Wishlist:
+-
+-
+-
 """
 import time
 """###############~~~~Path Variables~~~~###############"""
@@ -156,6 +161,7 @@ while skip == 0:
     w4b = stime[w1:w1 + w2]
     w4b.insert(0, '0')
     w4b.append('0')
+    w4c = sesh[w1:w1 + w2]  # sessions that day
 
     for w0 in range(len(w4a)):
         if ptc(w4a[w0]) > ptc(current_time):  # stime[w0] > ctime
@@ -185,6 +191,10 @@ while skip == 0:
                 output_file.write(weekend_text)
                 break
     break
+
+# MATERIALS BOOK NEEDED?
+if w4c.__contains__("FEEG2005"):
+    output_file.write("You will need your materials book today\n\n")
 
 # FORMATTING
 
