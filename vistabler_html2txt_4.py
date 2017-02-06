@@ -156,7 +156,7 @@ while skip == 0:
         skip = 1
         break
 
-    w3 = w2 - 1  # w3 is the index of the last session that day
+    w3 = w2 - 1 + w1  # w3 is the index of the last session that day
     w4a = stime[w1:w1 + w2]  # stimes of all sessions that day
     w4b = stime[w1:w1 + w2]
     w4b.insert(0, '0')
@@ -193,7 +193,7 @@ while skip == 0:
     break
 
 # MATERIALS BOOK NEEDED?
-if w4c.__contains__("FEEG2005"):
+if w4c.__contains__("FEEG2005") and w4c[w0:].__contains__("FEEG2005"):
     output_file.write("You will need your materials book today\n\n")
 
 # FORMATTING
@@ -225,4 +225,5 @@ output_file.close()
 fresh_press = open("/Users/JT/Desktop/myTimetable.txt", 'r')
 nline = fresh_press.readlines()
 print(nline[3])
+print(nline[5])
 fresh_press.close()"""
