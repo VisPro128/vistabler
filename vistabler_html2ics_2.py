@@ -14,11 +14,11 @@ from ics import Calendar, Event
 """###############~~~~Path Variables~~~~###############"""
 # your timetable html file location and file name
 # input_file = "/sdcard/Vistabler/mytimetable.html"
-input_file = "/Users/Pat/Desktop/vistabler/My.Timetable.html"
+input_file = "/Users/Pat/GitHub/vistabler/My.Timetable.html"
 
 # the path you want your file to export to
 # output_path = "/sdcard/Vistabler/"
-output_path = "/Users/Pat/Desktop/"
+output_path = "/Users/Pat/GitHub/vistabler/"
 
 # the filename and extension you want to export with
 output_filename = "myTimetable.ics"
