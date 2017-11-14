@@ -60,6 +60,7 @@
 				<dict>
 					<key>COMMAND_STRING</key>
 					<string>cd Github/vistabler
+python vistabler_html2ics_4.py
 git add My.Timetable.html
 git add myTimetable.ics
 git commit -m "New Week"
