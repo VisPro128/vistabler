@@ -63,6 +63,8 @@
 python vistabler_html2ics_4.py
 git add My.Timetable.html
 git add myTimetable.ics
+git add GitTimetablePush.app/Contents/document.wflow 
+git add .DS_Store
 git commit -m "New Week"
 git push</string>
 					<key>CheckedForUserDefaultShell</key>
@@ -174,8 +176,6 @@ git push</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
