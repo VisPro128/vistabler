@@ -179,16 +179,166 @@ git push</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>217.000000:253.000000</string>
+				<string>274.500000:253.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>message</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>Check github</string>
+						</array>
+					</dict>
+					<key>subtitle</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>Hope and pray it was successful</string>
+						</array>
+					</dict>
+					<key>title</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>Code execution and git push task run</string>
+						</array>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Display Notification.action</string>
+				<key>ActionName</key>
+				<string>Display Notification</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>message</key>
+					<string>Check github</string>
+					<key>subtitle</key>
+					<string>Hope and pray it was successful</string>
+					<key>title</key>
+					<string>Code execution and git push task run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.Display-Notification</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMDisplayNotificationAction</string>
+				<key>InputUUID</key>
+				<string>C9CA0D02-973C-49AA-A975-7103030AB6D5</string>
+				<key>Keywords</key>
+				<array/>
+				<key>OutputUUID</key>
+				<string>6934848B-EB1D-4CA9-9CAD-85FDD02881BC</string>
+				<key>UUID</key>
+				<string>F1C3D24C-0AB4-4E72-BE74-4BC9D1FCE75B</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>subtitle</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>title</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>message</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>274.500000:443.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Display Notification.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
 	</array>
 	<key>connectors</key>
-	<dict/>
+	<dict>
+		<key>5F56B672-822A-4B6B-AD86-7CC42272BF0C</key>
+		<dict>
+			<key>from</key>
+			<string>ED26A75E-3494-4868-A9C2-5071C10B0F2F - ED26A75E-3494-4868-A9C2-5071C10B0F2F</string>
+			<key>to</key>
+			<string>F1C3D24C-0AB4-4E72-BE74-4BC9D1FCE75B - F1C3D24C-0AB4-4E72-BE74-4BC9D1FCE75B</string>
+		</dict>
+	</dict>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>workflowTypeIdentifier</key>
