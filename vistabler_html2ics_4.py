@@ -146,7 +146,7 @@ for x in range(len(sesh)):
     for i in range(len(w1)):
         callines.append(w1[i])
 
-callines.append('END:VCALENDAR' + '\n')
+callines.append('END:VCALENDAR')
 
 output_file.writelines(callines)
 output_file.close()
