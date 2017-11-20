@@ -62,7 +62,7 @@
 					<string>cd Github/vistabler
 python vistabler_html2ics_4.py
 git add My.Timetable.html
-git add myTimetable.ics
+git add myTimetable_t.ics
 git add GitTimetablePush.app/Contents/document.wflow 
 git add .DS_Store
 git commit -m "New Week"
@@ -316,8 +316,6 @@ git push</string>
 						<string>2</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -331,7 +329,7 @@ git push</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>5F56B672-822A-4B6B-AD86-7CC42272BF0C</key>
+		<key>DABA4080-1A61-4145-84FA-D6794B8548E0</key>
 		<dict>
 			<key>from</key>
 			<string>ED26A75E-3494-4868-A9C2-5071C10B0F2F - ED26A75E-3494-4868-A9C2-5071C10B0F2F</string>

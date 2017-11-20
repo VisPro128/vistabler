@@ -21,7 +21,7 @@ input_file = "/Users/Pat/GitHub/vistabler/My.Timetable.html"
 output_path = "/Users/Pat/GitHub/vistabler/"
 
 # the filename and extension you want to export with
-output_filename = "myTimetable.ics"
+output_filename = "myTimetable_t.ics"
 """###############~~~~~~~~~~~~~~~~~~~~~~###############"""
 
 # import offline week timetable
