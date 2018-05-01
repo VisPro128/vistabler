@@ -111,6 +111,16 @@ for i in range(len(stime)):
 for i in range(len(etime)):
     etime[i] = etime[i].replace(":", "") + "00"
 
+# Daylight savings decision (SKETCHY AS HELL, FIX!!!!!!!)
+    DST_label = '\n'
+    STD_label = 'Z\n'
+
+    if int(date[0][-4:]) > 0400:  # Is it after April?
+        if int(date[0][-4:]) < 1100:  # Is it before November?
+            DST = True
+    else:
+        DST = False
+
 
 """########################### FILE CREATION ###########################"""
 output_file = open(output_path + output_filename, 'w+')
@@ -122,8 +132,19 @@ def add_cal_event(stamp, date, stime, etime, sesh, description, location):
     vnt = []
     vnt.append('BEGIN:VEVENT\n')
     vnt.append('DTSTAMP:' + stamp + '\n')
-    vnt.append('DTSTART:' + date + 'T' + stime[:6] + 'Z' + '\n')
-    vnt.append('DTEND:' + date + 'T' + etime[:6] + 'Z' + '\n')
+
+    vnt.append('DTSTART:' + date + 'T' + stime[:6])
+    if DST:
+        vnt.append(DST_label)
+    else:
+        vnt.append(STD_label)
+
+    vnt.append('DTEND:' + date + 'T' + etime[:6])
+    if DST:
+        vnt.append(DST_label)
+    else:
+        vnt.append(STD_label)
+
     vnt.append('SUMMARY:' + sesh + '\n')
     vnt.append('DESCRIPTION:' + description + '\n')
     vnt.append('LOCATION:' + location + '\n')
@@ -139,6 +160,7 @@ DTSTAMP = date[0] + 'T' + stime[0][:6] + 'Z'
 callines.append('BEGIN:VCALENDAR' + '\n')
 callines.append('PRODID:PT' + '\n')
 callines.append('VERSION:2.0' + '\n')
+
 
 for x in range(len(sesh)):
     w1 = add_cal_event(DTSTAMP, date[x], stime[x], etime[x], sesh[x],
